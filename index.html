@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad Node</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
+    <script src="./app.js" defer></script>
+    <script src="./components/Name.js" defer></script>
+    <script src = "./components/IDS.js" defer></script>
+    <script src = "./components/Update.js" defer></script>
+</head>
+    <body>
+        <div id="app" align="center" class = "container">
+            <div class ="row" align="center">
+                <div class="col-12"><h1>Actividad de Node.js</h1></div>
+                <button class="btn btn-dark"  v-on:click="callDBInfo" v-if="noDBInfo">Obtener Info de la DB </button>
+                <div v-if="showInfo" align="center">
+                    <div class = "row" align="center">
+                        <div class ="col-1">
+                            <h4>Ids</h4> 
+                            <ids v-for="object in dbInfo"v-bind:i="object.id_category"></ids>
+                        </div>
+                        <div class ="col-5">
+                            <h4>Nombre</h4> 
+                            <name v-for="object in dbInfo"v-bind:n="object.name"></name>
+                        </div>
+                        <div class ="col-6">
+                            <h4>Update</h4> 
+                            <update v-for="object in dbInfo"v-bind:u="object.date_upd"></update>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>
