@@ -1,4 +1,4 @@
-//segui el tutorial de: 
+//segui el tutorial de:  https://www.bezkoder.com/node-js-rest-api-express-mysql/
 const express = require("express");
 const cors = require("cors");
 const app = express();
